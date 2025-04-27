@@ -6,7 +6,7 @@ This repository contains source code that implements a **real‑time impulse‑r
 
 Key elements:
 
-* **Uniform‑partitioned convolution** (12 × 512‑sample partitions)
+* **Uniform‑partitioned FFT convolution** (12 × 512‑sample partitions)
 * **Ping‑pong DMA buffering** for uninterrupted audio capture and playback
 * **TI‑RTOS / SYS/BIOS** for scheduling
 * TI’s hardware‑accelerated **C28x FPU** FFT library (`CFFT_f32()`)
@@ -69,9 +69,8 @@ A good source explaining the algorithm used
 ## Memory Limitations & Extended IR Length
 The F28379D provides constrains the maximum IR length to **≈ 128 ms at 48 kHz**.
 
-For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling even longer IR lengths and even lower latency performance. See the companion repository:
+For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling even longer IR lengths and even lower latency performance. See the repository:
 
-"Add link here" 
-If i've forgotten to do so please find the repo from my profile
+<https://github.com/Hassan-Islam00/stm32h750-partitioned-fft-convolution-reverb>
 
 ---
