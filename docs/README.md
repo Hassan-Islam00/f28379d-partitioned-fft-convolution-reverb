@@ -7,7 +7,7 @@ Key architectural elements:
 
 * **Uniform‑partitioned convolution** (12 × 512‑sample partitions)
 * **Ping‑pong DMA buffering** for uninterrupted audio capture and playback
-* **TI‑RTOS / SYS/BIOS** tasking for deterministic scheduling
+* **TI‑RTOS / SYS/BIOS** for scheduling
 * TI’s hardware‑accelerated **C28x FPU** FFT library (`CFFT_f32()`)
 
 On the reference hardware the algorithm processes stereo audio at 48 kHz and occupies approximately **42 % of the CPU**.
