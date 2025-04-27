@@ -1,4 +1,4 @@
-# Real‑Time Convolution Reverb on TI TMS320F28379D
+# Real‑Time DSP Convolution Reverb on TI TMS320F28379D
 _Uniform‑Partitioned FFT • 48 kHz • 512‑Sample Blocks_
 
 ## Overview
