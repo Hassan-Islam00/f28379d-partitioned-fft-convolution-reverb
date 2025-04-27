@@ -176,27 +176,6 @@ Void hwi_adc_read(Void) // Uses Hwi0 Handle
 }
 
 
-//
-// spiRxFifoIsr - ISR for SPI receive FIFO
-//
-/*
-Void hwi_spiRxFifo(Void)
-{
-
-    int i;
-
-    for(i=0; i<2; i++)
-    {
-        rdata[i]=SpiaRegs.SPIRXBUF;     // Read data
-    }
-
-    SpiaRegs.SPIFFRX.bit.RXFFOVFCLR=1;  // Clear Overflow flag
-    SpiaRegs.SPIFFRX.bit.RXFFINTCLR=1;  // Clear Interrupt flag
-
-}
-*/
-
-
 /* ======== swi_adc_proc ======== */
 Void swi_adc_proc(Void)
 {
