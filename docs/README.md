@@ -41,7 +41,7 @@ The algorithm processes stereo audio at 48 kHz and occupies approximately **42
 The ADC DMA fills _Buffer A_ while the CPU processes _Buffer B_; the roles swap every 512 samples.
 
 ### 2 Uniform Partitioning
-The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each partition is zero‑padded to 1024 samples and stored as a complex spectru
+The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each partition is zero‑padded to 1024 samples and stored as a complex spectr
 
 ### 3 Per‑Block Processing
 ```text
@@ -50,6 +50,9 @@ The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each 
 3. Y[k]  = Σₚ X_{t−p}[k] × IR_FFT[p][k]
 4. y[n]  = IFFT( Y[k] )            ← overlap‑add to output buffer
 ```
+
+A good source explaining the algorithm used 
+<https://thewolfsound.com/fast-convolution-fft-based-overlap-add-overlap-save-partitioned/>
 
 ### 4 Performance Metrics
 | Metric | Value |
