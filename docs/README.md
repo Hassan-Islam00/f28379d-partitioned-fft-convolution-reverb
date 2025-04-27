@@ -47,7 +47,7 @@ The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each 
 ```text
 1. Pad current 512‑sample block to 1024 samples
 2. X[k]  = FFT( x[n] )
-3. Y[k]  = Σₚ X_{t−p}[k] × IR_FFT[p][k]
+3. Y[k]  = Σₚ X_{p}[k] × IR_FFT[p][k]
 4. y[n]  = IFFT( Y[k] )            ← overlap‑add to output buffer
 ```
 
