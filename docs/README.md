@@ -63,4 +63,12 @@ The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each 
 | CPU load | 42.58 % (measured) |
 | SRAM usage | ~96 kB |
 
+
+## Memory Limitations & Extended IR Length
+The F28379D provides constrains the maximum IR length to **≈ 128 ms at 48 kHz**.
+
+For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling IR lengths in the multi‑second range. See the companion repository:
+
+<https://github.com/yourusername/stm32h7-convolution-reverb>
+
 ---
