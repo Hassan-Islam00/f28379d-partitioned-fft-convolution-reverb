@@ -23,7 +23,7 @@ The algorithm processes stereo audio at 48 kHz and occupies approximately **42
 
 ---
 
-## Hardware & Software Requirements
+## Hardware & Software
 | Component | Version / Notes |
 |-----------|-----------------|
 | MCU | **TMS320F28379D** (LAUNCHXL‑F28379D) |
