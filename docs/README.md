@@ -3,14 +3,15 @@ _Uniform‑Partitioned FFT • 48 kHz • 512‑Sample Blocks_
 
 ## Overview
 This repository contains source code that implements a **real‑time impulse‑response (IR) reverb** on Texas Instruments’ C2000 **TMS320F28379D** microcontroller.  
-Key architectural elements:
+
+Key elements:
 
 * **Uniform‑partitioned convolution** (12 × 512‑sample partitions)
 * **Ping‑pong DMA buffering** for uninterrupted audio capture and playback
 * **TI‑RTOS / SYS/BIOS** for scheduling
 * TI’s hardware‑accelerated **C28x FPU** FFT library (`CFFT_f32()`)
 
-On the reference hardware the algorithm processes stereo audio at 48 kHz and occupies approximately **42 % of the CPU**.
+The algorithm processes stereo audio at 48 kHz and occupies approximately **42 % of the CPU**.
 
 ---
 
@@ -18,9 +19,7 @@ On the reference hardware the algorithm processes stereo audio at 48 kHz and o
 * Real‑time IR convolution with ~128 ms total IR length (6144 samples)
 * Deterministic 512‑sample (≈ 10.7 ms) latency
 * Runs under **TI‑RTOS / SYS/BIOS** with separate Hwi, Swi, and Task threads
-* Modular C source hierarchy (ISR, DSP core, HAL layers)
-* MATLAB utility to partition arbitrary IRs into frequency‑domain blocks
-* Cycle‑accurate performance counters and optional LED load indicator
+* MATLAB to partition arbitrary IRs into frequency‑domain blocks
 
 ---
 
@@ -42,7 +41,7 @@ On the reference hardware the algorithm processes stereo audio at 48 kHz and o
 The ADC DMA fills _Buffer A_ while the CPU processes _Buffer B_; the roles swap every 512 samples.
 
 ### 2 Uniform Partitioning
-The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each partition is zero‑padded to 1024 samples and stored as a complex spectrum `IR_FFT[p][k]`.
+The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each partition is zero‑padded to 1024 samples and stored as a complex spectru
 
 ### 3 Per‑Block Processing
 ```text
@@ -67,7 +66,7 @@ The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each 
 ## Memory Limitations & Extended IR Length
 The F28379D provides constrains the maximum IR length to **≈ 128 ms at 48 kHz**.
 
-For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling IR lengths in the multi‑second range. See the companion repository:
+For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling IR lengths in the multi‑second range and even lower latency performance. See the companion repository:
 
 <https://github.com/yourusername/stm32h7-convolution-reverb>
 
