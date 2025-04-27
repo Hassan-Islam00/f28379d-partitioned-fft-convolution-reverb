@@ -64,29 +64,3 @@ The IR is pre‑split into **P = 12** equal partitions of 512 samples. Each 
 | SRAM usage | ~96 kB |
 
 ---
-
-## Repository Layout
-```
-src/          ── application C sources (ISR, DSP core, HAL)
-include/      ── public headers (device, FFT tables, IR data)
-ir_data/      ── IR_FFT*.h  (12 partitions)
-linker/       ── *.cmd linker scripts (RAM / Flash)
-matlab/       ── partition_ir.m  (IR preprocessing utility)
-docs/         ── this README, license, figures
-```
-
----
-
-## Quick Build
-```bash
-git clone https://github.com/<user>/f28379d-convolution-reverb.git
-# import into CCS, build, flash
-```
-
-Make sure **TI‑RTOS** is installed (C2000Ware setup includes it); the CCS project file already links the required XDC configuration.
-
----
-
-## License
-* Original TI example code — **TI BSD‑like license**  
-* All additional code & documentation — **MIT License** © 2024‑25 Hassan Islam & Federico Sarabia
