@@ -2,7 +2,7 @@
 _Uniform‑Partitioned FFT • 48 kHz • 512‑Sample Blocks_
 
 ## Overview
-This repository contains self‑contained source code that implements a **real‑time impulse‑response (IR) reverb** on Texas Instruments’ C2000 **TMS320F28379D** microcontroller.  
+This repository contains source code that implements a **real‑time impulse‑response (IR) reverb** on Texas Instruments’ C2000 **TMS320F28379D** microcontroller.  
 Key architectural elements:
 
 * **Uniform‑partitioned convolution** (12 × 512‑sample partitions)
