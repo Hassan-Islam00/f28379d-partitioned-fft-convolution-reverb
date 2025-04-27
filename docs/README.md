@@ -11,7 +11,7 @@ Key elements:
 * **TI‑RTOS / SYS/BIOS** for scheduling
 * TI’s hardware‑accelerated **C28x FPU** FFT library (`CFFT_f32()`)
 
-The algorithm processes stereo audio at 48 kHz and occupies approximately **42 % of the CPU**.
+The algorithm processes audio at 48 kHz and occupies approximately **42 % of the CPU**.
 
 ---
 
