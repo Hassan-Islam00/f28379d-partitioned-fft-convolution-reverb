@@ -1,0 +1,29 @@
+# ---- Operating-system noise ----
+.DS_Store
+__MACOSX/
+._*
+
+# ---- CCS / Eclipse metadata ----
+*.launch
+.launches/
+.settings/
+.metadata/
+# comment the next three lines out if you want the full CCS workspace committed
+.cproject
+.project
+.config/
+
+# ---- Build output ----
+Debug/
+Release/
+*.out
+*.obj
+*.map
+*.d
+*.mk
+*.dep
+*.hex
+*.bin
+
+# ---- Misc ----
+*.log
