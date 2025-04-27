@@ -71,6 +71,7 @@ The F28379D provides constrains the maximum IR length to **≈ 128 ms at 48 k
 
 For longer reverbs (e.g., concert‑hall tails > 1 s) the same algorithm has been ported to an **STM32H7** platform with external SDRAM and dual‑bank DTCM, enabling even longer IR lengths and even lower latency performance. See the companion repository:
 
-<https://github.com/yourusername/stm32h7-convolution-reverb>
+"Add link here" 
+If i've forgotten to do so please find the repo from my profile
 
 ---
